@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Clients</h1>
+
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Username</th>
+      <th scope="col">Password</th>
+      <th scope="col">Firstname</th>
+      <th scope="col">Lastname</th>
+      <th scope="col">Point</th>
+      <th scope="col">Platform</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody id="clients">
+    <% @clients.each do |client| %>
+      <%= render client %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New client", new_client_path %>

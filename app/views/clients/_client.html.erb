@@ -1,0 +1,12 @@
+<tr id="<%= dom_id client %>">
+  <td><%= client.id %></td>
+  <td><%= client.username %></td>
+  <td><%= client.password %></td>
+  <td><%= client.first_name %></td>
+  <td><%= client.last_name %></td>
+  <td><%= client.point %></td>
+  <td><%= client.platform %></td>
+  <td>
+    <%= link_to "Sync Now", sync_client_path(client), data: { turbo_method: :post }, class: 'btn btn-primary' %>
+  </td>
+</tr>
