@@ -2,8 +2,9 @@ module EHR
   module JamTangan
     class Client < JamTanganAdapter
       def profile
+        sleep 5
         visit "#{base_url}/account"
-        sleep 2
+        sleep 5
 
         OpenStruct.new(
           name: first_name,

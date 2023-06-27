@@ -2,17 +2,13 @@ module EHR
   module JamTangan
     class Auth < JamTanganAdapter
       def log_in(username:, password:)
-        visit base_url
+        visit "#{base_url}/login"
 
         sleep 2
-        if page.has_css?('#moe-push-div')
-          find('.ng-binding', text: 'Nanti Saja').click
-        end
-
-        wait_for_click_element(page, '#login-button')
-        find('input[name="username"]').set('rails303@yahoo.com')
-        find('input[name="password"]').set('123123123A!')
-        find('.qa-login-button').click
+        find('input[name="username"]').set(username)
+        find('input[name="password"]').set(password)
+        sleep 1
+        find('.login-form-container form button').click
       end
 
       def log_out

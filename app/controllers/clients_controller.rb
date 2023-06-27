@@ -58,7 +58,6 @@ class ClientsController < ApplicationController
   end
 
   def sync
-    # EHR::JamTangan::Auth.new.log_in(username: @client.username, password: @client.password)
     ClientServices::SyncClient.call(client: @client)
 
     redirect_to clients_path, notice: 'Profile is currently being synced'
